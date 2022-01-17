@@ -18,8 +18,20 @@ body {
 
     
 } */
+#info {
+    display: none;
+    transition: all 1s;
+    position: absolute;
+    background-color: #ffffff00;
+    top: 100px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    
+    
+}
 
-section {
+#container {
     /* transition: all .5s; */
     width: 500px;
     /* background-color: #ffffff20; */
@@ -35,21 +47,12 @@ section {
     
 }
 
-section {
-
-
-    /* position: relative; */
-    /* top: 0;   */
-    /* right: 10px; 
-    height: 1000px;
-    transform: none; */
-}
 
 div {
     /* background-color: #ffffff33; */
     text-align: right;
     font-weight: 600;
-    font-size: 120px;   
+    font-size: 80px;   
     transition: all .5s;
     width: 500px;   
     padding-left: 20px;
@@ -58,7 +61,7 @@ div {
 
 
 
-div:hover {
+.clickable:hover {
     
     color: #ffffff77;
     transform: 
