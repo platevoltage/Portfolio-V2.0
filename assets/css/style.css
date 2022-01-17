@@ -3,42 +3,88 @@ body {
     /* background-image: linear-gradient(#2f00ff 0%, #2a04d6 100%); */
     background-color: #2f00ff;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',  'sans-serif';
-
+    position: relative;
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* background-color: #ffffff10; */
+    background-color: #ffffff10;
     height: 100vh;
     
 }
 
+section {
+
+    /* background-color: #ffffff20; */
+    position: absolute;
+    top: 50vh;  
+    right: 10px; 
+    /* height: 1000px; */
+    /* width: 1000px; */
+    
+    transform: 
+                
+                translate(0%, -50vh) 
+                
+                perspective(300px) 
+                
+                rotateY(-20deg) 
+                
+
+                /* skew(-10deg, 0deg) */
+                /* rotateX(10deg) */
+                
+                ;
+
+    /* transform: translate(0%, -50%);  */
+    /* transform-origin: 50% 500px; */
+
+}
+
 div {
-    text-align: right;
-    /* background-color: #ffffff10; */
-    font-size: 100px;
     position: relative;
     
+    /* display: flex; */
+    /* width: 100px; */
+    /* text-align: right; */
+    /* background-color: #ffffff10; */
+    font-weight: 600;
+    font-size: 120px;
+    
+    /* position: relative; */
+    top: 0px;
+    /* -webkit-perspective: 240px; */
+
+    
+}
+/* #p1:hover {
+    color: #555555;
+    transform: skew(10deg, 5deg);
+    transition: all .5s;
+    top: 10px;
+    
+  
+   
 }
 
 #p1 {
-    transform: skew(10deg, 10deg);
-    top: -100px;
+    transform: skew(0deg, 0deg);
+  
 }
 #p2 {
-    transform: skew(5deg, 5deg);
-    top: -50px;
+    transform: skew(0deg, 0deg);
+
 }
 #p3 {
     transform: skew(0deg, 0deg);
 }
 #p4 {
-    transform: skew(-5deg, -5deg);
-    top: 50px;
+    transform: skew(0deg, 0deg);
+ 
 }
 #p5 {
-    transform: skew(-10deg, -10deg);
-    top: 100px;
-}
+    transform: skew(0deg, 0deg);
+  
+} */
