@@ -19,15 +19,21 @@ body {
     
 } */
 #back-button {
+    border: 1px solid;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    color: #ffffff88;
     position: absolute;
     bottom: 0px;
     right: 0px;
     background-color: #ffffff33;
     border: none;
+    display: none;
 }
 #info {
     /* position: relative; */
-    transition: all 2s;
+    transition-duration: .5s;
     border: 1px solid;
     border-color: #00000000;
     border-radius: 10px;
@@ -51,9 +57,9 @@ body {
 }
 
 #container {
-    /* transition: all .5s; */
+    transition-duration: 0s;
     width: 500px;
-    background-color: #ffffff20;
+    /* background-color: #ffffff20; */
     position: absolute;
     top: 70vh;  
     right: 10px; 

@@ -23,13 +23,35 @@ backButtonEl.addEventListener('click', function(e) {
     containerEl.style.transform = null;
     containerEl.style.top = null;
     containerEl.style.right = null;
-    // containerEl.style.width = null;
     containerEl.style.position = null;
     containerEl.style.height = null;
-    // containerEl.style.transition = null;
+    backButtonEl.style.display = null;
+    
+    
+        
+    infoEl.style.color = null;
+    infoEl.style.boxShadow = null; 
+    infoEl.style.borderColor = null;
+    infoEl.style.transitionDuration = null;
     setTimeout(function() {
         containerEl.style.width = null;
+        
+        infoEl.style.backgroundColor = null;
+        
+       
+    
     },500);
+    setTimeout(function() {
+        containerEl.innerHTML = "";
+       
+        populateProjects();
+        containerEl.style.transitionDuration = "0s";
+        infoEl.style.display = null;
+        
+       
+    
+    },1500);
+
 });
 
 
@@ -38,6 +60,22 @@ backButtonEl.addEventListener('click', function(e) {
 
 window.onscroll = adjustPerspective;
 adjustPerspective();
+populateProjects();
+
+
+function populateProjects() {
+    
+    for(var i = 1; i < 8; i++) {
+        var project = document.createElement('div');
+        project.classList.add('clickable');
+        project.id = 'p' + i;
+        project.textContent = "PROJECT " + i;
+        containerEl.appendChild(project);
+    }
+    
+
+
+}
 
 function adjustPerspective() {
     var middleOfWindow = window.innerHeight/4 + window.scrollY;
@@ -88,6 +126,7 @@ function moveProjectToHeader(id) {
     containerEl.style.width = "100%";
     containerEl.style.transitionDuration = ".5s";
     infoEl.style.display = "block"; 
+    infoEl.style.transitionDuration = "2s";
     
     setTimeout(function() {
 
@@ -102,6 +141,7 @@ function moveProjectToHeader(id) {
         setTimeout(function() {
             infoEl.style.boxShadow = "5px 5px 5px #00000033";
             infoEl.style.color = "#ffffff99";
+            backButtonEl.style.display = "block";
         },800);
     },500);
     
@@ -110,14 +150,3 @@ function moveProjectToHeader(id) {
 }
 
 
-function HandleBackFunctionality()  
-{  
-      if(window.event) //Internet Explorer  
-     {  
-          alert("Browser back button is clicked on Internet Explorer...");  
-      }  
-      else //Other browsers for example Chrome  
-      {  
-          alert("Browser back button is clicked on other browser...");  
-      }  
-} 
