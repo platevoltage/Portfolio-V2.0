@@ -8,16 +8,16 @@ body {
     background-color: #2f00ff;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',  'sans-serif';
     position: relative;
+    
 }
 
-/* main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #ffffff10;
+main {
+    height: 2000px;
+    
+    /* background-color: #ffffff10; */
 
     
-} */
+}
 #back-button {
     border: 1px solid;
     border-radius: 5px;
@@ -42,7 +42,7 @@ body {
     
     position: absolute;
     background-color: #ffffff00;
-    color: #ffffff00;
+    
     
     top: 100px;
     left: 100px;
@@ -51,10 +51,18 @@ body {
     
     
 }
-#info p {
+p {
+    
+    /* transition-duration: inherit; */
     margin: 20px;
     font-size: 20px;
 }
+#paragraph-1, #paragraph-2 {
+    transition-duration: inherit;
+    color: #ffffff00;
+}
+
+
 
 #container {
     transition-duration: 0s;
@@ -63,7 +71,7 @@ body {
     position: absolute;
     top: 70vh;  
     right: 10px; 
-    height: 1000px;
+    /* height: 1000px; */
     transform: 
                 translate(-20%, -50vh) 
                 perspective(300px) 
@@ -84,7 +92,10 @@ div {
 }
 
 
-
+.hidden {
+    color: #ffffff00;
+    font-size: 0px;
+}
 
 .clickable:hover {
     
