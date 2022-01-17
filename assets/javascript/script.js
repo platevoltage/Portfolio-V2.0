@@ -1,9 +1,32 @@
-// console.log("hello");
-containerEl = document.getElementById("container");
-infoEl = document.getElementById("info");
-backButtonEl = document.getElementById("back-button");
-paragraph1El = document.getElementById("paragraph-1");
-paragraph2El = document.getElementById("paragraph-2");
+
+const content = [
+    {
+        title: "PROJECT 1",
+
+        paragraph1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante semper, tempor velit eget, lacinia sem. Cras viverra tellus dolor, nec porta lectus rhoncus suscipit. Phasellus volutpat sodales quam vitae sollicitudin. In id interdum arcu. Fusce eu arcu orci. Duis sagittis orci in nulla dictum, id tincidunt eros eleifend. Donec bibendum mattis enim. Mauris pharetra pulvinar dapibus. Nam in ante a mauris congue tristique non vel odio.",
+
+        paragraph2: "Aenean nec ante quis urna sollicitudin volutpat. Integer id ligula risus. Sed suscipit consequat nibh. Nunc tortor sapien, pharetra et lobortis at, viverra non mauris. Donec eu tristique nunc. Sed vel ligula a justo condimentum varius. Suspendisse ac cursus diam. Pellentesque laoreet mauris eu sapien tincidunt, quis suscipit urna dictum. Morbi efficitur justo id mauris vestibulum, eu rhoncus tortor aliquam. Maecenas eros augue, placerat eget mauris nec, mattis commodo sem. Phasellus nec lorem vel felis placerat feugiat quis id lectus. Sed consequat orci urna, ut malesuada mauris maximus vitae. Nulla sit amet suscipit justo. Curabitur commodo arcu non mollis tincidunt. Nam arcu eros, volutpat non odio sit amet, sagittis elementum massa. Vestibulum finibus arcu vitae metus pellentesque luctus."
+    },{
+        title: "PROJECT 2",
+    },{
+        title: "PROJECT 3",
+    },{
+        title: "PROJECT 4",
+    },{
+        title: "PROJECT 5",
+    },{
+        title: "PROJECT 6",
+    }
+
+];
+
+
+
+const containerEl = document.getElementById("container");
+const infoEl = document.getElementById("info");
+const backButtonEl = document.getElementById("back-button");
+const paragraph1El = document.getElementById("paragraph-1");
+const paragraph2El = document.getElementById("paragraph-2");
 
 
 //initial setup
@@ -18,8 +41,10 @@ backButtonEl.addEventListener('click', returnToHomePage);
 
 containerEl.addEventListener('click', function(e) {
     if (e.target.classList.contains("clickable")) {
-        console.log(e.target.id);
+        // console.log(e.target.id);
         scrollToTop(e.target.id);
+        // paragraph1El.textContent = content[e.target.id].paragraph1;
+        // paragraph2El.textContent = content[e.target.id].paragraph2;
     }
     
 });
@@ -36,11 +61,12 @@ containerEl.addEventListener('click', function(e) {
 
 function populateProjects() {
     
-    for(var i = 1; i < 8; i++) {
+    for(i in content) {
         var project = document.createElement('div');
         project.classList.add('clickable');
-        project.id = 'p' + i;
-        project.textContent = "PROJECT " + i;
+        project.id = i;
+
+        project.textContent = content[i].title;
         containerEl.appendChild(project);
     }
     
@@ -58,7 +84,7 @@ function scrollToTop(id) {
     
     var interval = setInterval(function() {
         window.scrollTo(0, window.scrollY - scrollY*.03);
-        console.log("1");
+        
         if (window.scrollY == 0) {
             clearInterval(interval);
             moveProjectToHeader(id);
@@ -117,7 +143,7 @@ function moveProjectToHeader(id) {
         },800);
         setTimeout(function() {
             paragraph2El.style.color = "#ffffff99";
-            console.log(infoEl.children[1]);
+            
         },1000);
 
     },500);
@@ -127,32 +153,41 @@ function moveProjectToHeader(id) {
 }
 
 function returnToHomePage () {
-    containerEl.style.transform = null;
-    containerEl.style.top = null;
-    containerEl.style.right = null;
-    containerEl.style.position = null;
-    containerEl.style.height = null;
-    backButtonEl.style.display = null;  
+   
+    containerEl.style.width = null;  
     paragraph1El.style.color = null;
     paragraph2El.style.color = null;
-    infoEl.style.boxShadow = null; 
-    infoEl.style.borderColor = null;
-    infoEl.style.transitionDuration = null;
-    for (i of containerEl.children) {
-        i.removeAttribute("class");
-        i.classList.add("clickable");
-    }
+    paragraph1El.style.transitionDuration = ".5s";
+    paragraph2El.style.transitionDuration = ".5s";
+
     setTimeout(function() {
         infoEl.style.backgroundColor = null;
+        infoEl.style.boxShadow = null; 
+        infoEl.style.borderColor = null;
+        infoEl.style.transitionDuration = null;
         
     },200)
     setTimeout(function() {
-        containerEl.style.width = null;    
+        containerEl.style.transform = null;
+        containerEl.style.top = null;
+        containerEl.style.right = null;
+        containerEl.style.position = null;
+        containerEl.style.height = null;
+        backButtonEl.style.display = null;  
+        
+        
+        for (i of containerEl.children) {
+            i.removeAttribute("class");
+            i.classList.add("clickable");
+        }
+     
          
     },500);
     setTimeout(function() {
         containerEl.style.transitionDuration = "0s";
         infoEl.style.display = null;   
+        paragraph1El.style.transitionDuration = null;
+        paragraph2El.style.transitionDuration = null;
     },1500);
 }
 
