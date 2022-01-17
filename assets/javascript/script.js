@@ -36,9 +36,10 @@ function moveToTop() {
 }
 
 function selectProject() {
-    containerEl.style.transform = "none";
+    containerEl.style.transform = "translate(0%, 0vh) perspective(0px) rotateY(0deg)";
     containerEl.style.top = "0";
-    containerEl.style.transition = "all .5s";
+    containerEl.style.width = "100%";
+    containerEl.style.transitionDuration = ".5s";
 
     containerEl.removeChild(project2);
     containerEl.removeChild(project3);
