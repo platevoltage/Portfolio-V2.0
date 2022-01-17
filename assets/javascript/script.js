@@ -1,6 +1,7 @@
 // console.log("hello");
 containerEl = document.getElementById("container");
 infoEl = document.getElementById("info");
+backButtonEl = document.getElementById("back-button");
 
 
 
@@ -15,6 +16,23 @@ containerEl.addEventListener('click', function(e) {
     }
     
 });
+
+backButtonEl.addEventListener('click', function(e) {
+    console.log(e.target);
+
+    containerEl.style.transform = null;
+    containerEl.style.top = null;
+    containerEl.style.right = null;
+    // containerEl.style.width = null;
+    containerEl.style.position = null;
+    containerEl.style.height = null;
+    // containerEl.style.transition = null;
+    setTimeout(function() {
+        containerEl.style.width = null;
+    },500);
+});
+
+
 
 
 
@@ -90,3 +108,16 @@ function moveProjectToHeader(id) {
 
 
 }
+
+
+function HandleBackFunctionality()  
+{  
+      if(window.event) //Internet Explorer  
+     {  
+          alert("Browser back button is clicked on Internet Explorer...");  
+      }  
+      else //Other browsers for example Chrome  
+      {  
+          alert("Browser back button is clicked on other browser...");  
+      }  
+} 

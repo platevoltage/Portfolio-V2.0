@@ -18,7 +18,15 @@ body {
 
     
 } */
+#back-button {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background-color: #ffffff33;
+    border: none;
+}
 #info {
+    /* position: relative; */
     transition: all 2s;
     border: 1px solid;
     border-color: #00000000;
@@ -45,7 +53,7 @@ body {
 #container {
     /* transition: all .5s; */
     width: 500px;
-    /* background-color: #ffffff20; */
+    background-color: #ffffff20;
     position: absolute;
     top: 70vh;  
     right: 10px; 
