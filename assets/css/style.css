@@ -6,31 +6,32 @@ body {
     position: relative;
 }
 
-main {
+/* main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff10;
-    height: 100vh;
+
     
-}
+} */
 
 section {
 
     /* background-color: #ffffff20; */
     position: absolute;
-    top: 50vh;  
+    top: 70vh;  
     right: 10px; 
-    /* height: 1000px; */
+    height: 10000px;
     /* width: 1000px; */
     
     transform: 
                 
-                translate(0%, -50vh) 
+                translate(-20%, -50vh) 
                 
                 perspective(300px) 
                 
                 rotateY(-20deg) 
+                  
                 
 
                 /* skew(-10deg, 0deg) */
@@ -44,47 +45,42 @@ section {
 }
 
 div {
-    position: relative;
+    /* position: relative; */
     
     /* display: flex; */
-    /* width: 100px; */
-    /* text-align: right; */
-    /* background-color: #ffffff10; */
+    /* width: 600px; */
+    text-align: right;
+    background-color: #ffffff10;
     font-weight: 600;
     font-size: 120px;
     
     /* position: relative; */
-    top: 0px;
+    /* top: 0px; */
     /* -webkit-perspective: 240px; */
-
     
-}
-/* #p1:hover {
-    color: #555555;
-    transform: skew(10deg, 5deg);
     transition: all .5s;
-    top: 10px;
+    /* transition-delay: .05s; */
+    /* margin: 10px; */
     
-  
+    
+}
+
+div:hover {
+    
+    color: #ffffff77;
+    background-color: #ffffff20;
+    transform: 
+    
+        scale(1.2)   
+        translate(-3%, 0%) 
+                
+        perspective(1px) 
+                
+        rotateY(.02deg) 
+                     
    
+   
+    
+    ;
+       /* font-size: 120px;          */
 }
-
-#p1 {
-    transform: skew(0deg, 0deg);
-  
-}
-#p2 {
-    transform: skew(0deg, 0deg);
-
-}
-#p3 {
-    transform: skew(0deg, 0deg);
-}
-#p4 {
-    transform: skew(0deg, 0deg);
- 
-}
-#p5 {
-    transform: skew(0deg, 0deg);
-  
-} */

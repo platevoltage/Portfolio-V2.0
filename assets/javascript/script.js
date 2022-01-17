@@ -9,7 +9,7 @@ containerEl = document.getElementById("container");
 
 
 window.onscroll = function() {
-    var middleOfWindow = window.innerHeight/2 + window.scrollY;
+    var middleOfWindow = window.innerHeight/4 + window.scrollY;
     containerEl.style.transformOriginY = middleOfWindow + "px";
     console.log(middleOfWindow);
 }
