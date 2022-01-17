@@ -19,16 +19,27 @@ body {
     
 } */
 #info {
+    transition: all 2s;
+    border: 1px solid;
+    border-color: #00000000;
+    border-radius: 10px;
+    box-shadow: none;
     display: none;
-    transition: all 1s;
+    
     position: absolute;
     background-color: #ffffff00;
+    color: #ffffff00;
+    
     top: 100px;
     left: 100px;
-    width: 500px;
-    height: 500px;
+    width: 70vw;
+    height: 70vh;
     
     
+}
+#info p {
+    margin: 20px;
+    font-size: 20px;
 }
 
 #container {

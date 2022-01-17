@@ -79,6 +79,12 @@ function moveProjectToHeader(id) {
         }
         // infoEl.style.display = "block";  
         infoEl.style.backgroundColor = "#ffffff22";
+        
+        infoEl.style.borderColor = "#00000033";
+        setTimeout(function() {
+            infoEl.style.boxShadow = "5px 5px 5px #00000033";
+            infoEl.style.color = "#ffffff99";
+        },800);
     },500);
     
 
