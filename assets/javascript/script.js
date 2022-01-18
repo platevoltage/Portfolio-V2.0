@@ -1,21 +1,21 @@
 
 const content = [
     {
-        title: "PROJECT 1",
+        title: "WEATHER WIDGET",
 
         paragraph1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante semper, tempor velit eget, lacinia sem. Cras viverra tellus dolor, nec porta lectus rhoncus suscipit. Phasellus volutpat sodales quam vitae sollicitudin. In id interdum arcu. Fusce eu arcu orci. Duis sagittis orci in nulla dictum, id tincidunt eros eleifend. Donec bibendum mattis enim. Mauris pharetra pulvinar dapibus. Nam in ante a mauris congue tristique non vel odio.",
 
         paragraph2: "Aenean nec ante quis urna sollicitudin volutpat. Integer id ligula risus. Sed suscipit consequat nibh. Nunc tortor sapien, pharetra et lobortis at, viverra non mauris. Donec eu tristique nunc. Sed vel ligula a justo condimentum varius. Suspendisse ac cursus diam. Pellentesque laoreet mauris eu sapien tincidunt, quis suscipit urna dictum. Morbi efficitur justo id mauris vestibulum, eu rhoncus tortor aliquam. Maecenas eros augue, placerat eget mauris nec, mattis commodo sem. Phasellus nec lorem vel felis placerat feugiat quis id lectus. Sed consequat orci urna, ut malesuada mauris maximus vitae. Nulla sit amet suscipit justo. Curabitur commodo arcu non mollis tincidunt. Nam arcu eros, volutpat non odio sit amet, sagittis elementum massa. Vestibulum finibus arcu vitae metus pellentesque luctus."
     },{
-        title: "PROJECT 2",
+        title: "BENDER'S QUIZ",
     },{
-        title: "PROJECT 3",
+        title: "PORTFOLIOv1",
     },{
-        title: "PROJECT 4",
+        title: "TETRIS",
     },{
-        title: "PROJECT 5",
+        title: "SOUND LANE",
     },{
-        title: "PROJECT 6",
+        title: "SECURIFIER",
     }
 
 ];
@@ -69,7 +69,7 @@ function populateProjects() {
         project.classList.add('off-screen');
         project.id = i;
 
-        project.textContent = content[i].title;
+        project.innerHTML = content[i].title;
         array.push(project);
         containerEl.appendChild(project);
     }
@@ -112,6 +112,7 @@ function fadeNotClicked(id) {
     for (i of containerEl.children) {
         if (i.id == id) {
             i.removeAttribute("class");
+            i.classList.add('on-display');
             // containerEl.prepend(i);
         }
     
