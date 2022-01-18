@@ -21,7 +21,7 @@ const content = [
 ];
 
 
-
+const bodyEl = document.querySelector('body');
 const containerEl = document.getElementById("container");
 const frontPageEl = document.getElementById("front-page");
 const infoEl = document.getElementById("info");
@@ -87,7 +87,7 @@ function reveal(i) {
 }
 
 function adjustPerspective() {
-    var middleOfWindow = window.innerHeight/5 + window.scrollY;
+    var middleOfWindow = window.innerHeight/5 + window.scrollY*1.5;
     containerEl.style.transformOriginY = middleOfWindow + "px";
     frontPageEl.style.transformOriginY = middleOfWindow + "px";
     // console.log(middleOfWindow);
@@ -139,7 +139,7 @@ function moveProjectToHeader(id) {
     containerEl.style.transitionDuration = ".5s";
     infoEl.style.display = "block"; 
     infoEl.style.transitionDuration = "2s";
-    
+    bodyEl.style.backgroundColor = "#770000";
     setTimeout(function() {
 
         // while (containerEl.children.length > 1) {
@@ -150,18 +150,18 @@ function moveProjectToHeader(id) {
         infoEl.style.backgroundColor = "#ffffff22";
         
         infoEl.style.borderColor = "#00000033";
-        setTimeout(function() {
-            infoEl.style.boxShadow = "5px 5px 5px #00000033";
-            paragraph1El.style.color = "#ffffff99";
-            backButtonEl.style.display = "block";
-        },800);
-        setTimeout(function() {
-            paragraph2El.style.color = "#ffffff99";
-            
-        },1000);
+        
 
     },500);
-    
+    setTimeout(function() {
+        infoEl.style.boxShadow = "5px 5px 5px #00000033";
+        paragraph1El.style.color = "#ffffff99";
+        backButtonEl.style.display = "block";
+    },1300);
+    setTimeout(function() {
+        paragraph2El.style.color = "#ffffff99";
+        
+    },1500);
 
 
 }
@@ -174,6 +174,7 @@ function returnToHomePage () {
     paragraph2El.style.color = null;
     paragraph1El.style.transitionDuration = ".5s";
     paragraph2El.style.transitionDuration = ".5s";
+    
 
     setTimeout(function() {
         infoEl.style.backgroundColor = null;
@@ -203,6 +204,7 @@ function returnToHomePage () {
             }
         frontPageEl.classList.remove("off-screen");
         frontPageEl.style.transitionDuration = "1s";
+        bodyEl.style.backgroundColor = null;
          
     },500);
     setTimeout(function() {
@@ -211,6 +213,7 @@ function returnToHomePage () {
         paragraph1El.style.transitionDuration = null;
         paragraph2El.style.transitionDuration = null;
         frontPageEl.style.transitionDuration = null;
+        
        
     },1500);
 }
