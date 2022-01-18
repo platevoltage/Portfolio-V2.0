@@ -83,21 +83,40 @@ p {
 
 div {
     /* background-color: #ffffff33; */
+    /* color: #000000; */
     text-align: right;
     font-weight: 600;
     font-size: 80px;   
-    transition: all .5s;
+    
     width: 500px;   
+    
     padding-left: 20px;
+    margin-bottom: 0px;
+    transition: all .5s ease-out;
+    /* transition: all 10s; */
 }
 
 
 .hidden {
     color: #ffffff00;
     font-size: 0px;
+    /* transition: all .5s */
+    
+    /* display: none; */
 }
 
+.off-screen {
+    margin-bottom: 1000px;
+    margin-top: 1000px;
+    /* transition: all .5s */
+    /* transition: all .5s ease-out; */
+    
+}
+
+
 .clickable:hover {
+
+    /* margin-bottom: 100px; */
     
     color: #ffffff77;
     transform: 

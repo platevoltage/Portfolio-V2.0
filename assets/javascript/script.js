@@ -43,8 +43,8 @@ containerEl.addEventListener('click', function(e) {
     if (e.target.classList.contains("clickable")) {
         // console.log(e.target.id);
         scrollToTop(e.target.id);
-        // paragraph1El.textContent = content[e.target.id].paragraph1;
-        // paragraph2El.textContent = content[e.target.id].paragraph2;
+        paragraph1El.textContent = content[e.target.id].paragraph1;
+        paragraph2El.textContent = content[e.target.id].paragraph2;
     }
     
 });
@@ -60,15 +60,32 @@ containerEl.addEventListener('click', function(e) {
 
 
 function populateProjects() {
-    
+    var array = [];
     for(i in content) {
         var project = document.createElement('div');
         project.classList.add('clickable');
+        project.classList.add('off-screen');
         project.id = i;
 
         project.textContent = content[i].title;
+        array.push(project);
         containerEl.appendChild(project);
     }
+
+    function reveal(i) {
+        setTimeout(function() {
+            containerEl.children[i].classList.remove("off-screen");
+        },100*i); 
+    }
+    for (i in content) {
+        reveal(i);
+    }
+    
+    
+
+        
+        
+    
     
 
 
