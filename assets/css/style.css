@@ -9,6 +9,7 @@ body {
     transition: all .5s;
     /* background-image: linear-gradient(#2f00ff 0%, #2a04d6 100%); */
     background-color: #2f00ff;
+    
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS',  'sans-serif';
     position: relative;
    

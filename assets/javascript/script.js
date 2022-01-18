@@ -3,19 +3,26 @@ const content = [
     {
         title: "WEATHER WIDGET",
 
+        bgColor: "#008f40",
+
         paragraph1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante semper, tempor velit eget, lacinia sem. Cras viverra tellus dolor, nec porta lectus rhoncus suscipit. Phasellus volutpat sodales quam vitae sollicitudin. In id interdum arcu. Fusce eu arcu orci. Duis sagittis orci in nulla dictum, id tincidunt eros eleifend. Donec bibendum mattis enim. Mauris pharetra pulvinar dapibus. Nam in ante a mauris congue tristique non vel odio.",
 
         paragraph2: "Aenean nec ante quis urna sollicitudin volutpat. Integer id ligula risus. Sed suscipit consequat nibh. Nunc tortor sapien, pharetra et lobortis at, viverra non mauris. Donec eu tristique nunc. Sed vel ligula a justo condimentum varius. Suspendisse ac cursus diam. Pellentesque laoreet mauris eu sapien tincidunt, quis suscipit urna dictum. Morbi efficitur justo id mauris vestibulum, eu rhoncus tortor aliquam. Maecenas eros augue, placerat eget mauris nec, mattis commodo sem. Phasellus nec lorem vel felis placerat feugiat quis id lectus. Sed consequat orci urna, ut malesuada mauris maximus vitae. Nulla sit amet suscipit justo. Curabitur commodo arcu non mollis tincidunt. Nam arcu eros, volutpat non odio sit amet, sagittis elementum massa. Vestibulum finibus arcu vitae metus pellentesque luctus."
     },{
         title: "BENDER'S QUIZ",
+        bgColor: "#000000",
     },{
         title: "PORTFOLIOv1",
+        bgColor: "#000000",
     },{
         title: "TETRIS",
+        bgColor: "#000000",
     },{
         title: "SOUND LANE",
+        bgColor: "#000000",
     },{
         title: "SECURIFIER",
+        bgColor: "#000000",
     }
 
 ];
@@ -139,7 +146,7 @@ function moveProjectToHeader(id) {
     containerEl.style.transitionDuration = ".5s";
     infoEl.style.display = "block"; 
     infoEl.style.transitionDuration = "2s";
-    bodyEl.style.backgroundColor = "#770000";
+    bodyEl.style.backgroundColor = content[id].bgColor;
     setTimeout(function() {
 
         // while (containerEl.children.length > 1) {
@@ -148,7 +155,7 @@ function moveProjectToHeader(id) {
         // }
         // infoEl.style.display = "block";  
         infoEl.style.backgroundColor = "#ffffff22";
-        
+        console.log(content[id].bgColor);
         infoEl.style.borderColor = "#00000033";
         
 
