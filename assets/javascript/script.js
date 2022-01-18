@@ -72,23 +72,16 @@ function populateProjects() {
         containerEl.appendChild(project);
     }
 
-    function reveal(i) {
-        setTimeout(function() {
-            containerEl.children[i].classList.remove("off-screen");
-        },100*i); 
-    }
     for (i in content) {
         reveal(i);
     }
-    
-    
 
-        
-        
-    
-    
+}
 
-
+function reveal(i) {
+    setTimeout(function() {
+        containerEl.children[i].classList.remove("off-screen");
+    },100*i); 
 }
 
 function adjustPerspective() {
@@ -195,8 +188,14 @@ function returnToHomePage () {
         
         for (i of containerEl.children) {
             i.removeAttribute("class");
+            
             i.classList.add("clickable");
+            i.classList.add("off-screen");
+            
         }
+        for (i in content) {
+                reveal(i);
+            }
      
          
     },500);

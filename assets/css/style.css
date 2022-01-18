@@ -65,8 +65,9 @@ p {
 
 
 #container {
+    overflow-x: hidden;
     transition-duration: 0s;
-    width: 500px;
+    width: 520px;
     /* background-color: #ffffff20; */
     position: absolute;
     top: 80vh;  
@@ -98,10 +99,10 @@ div {
 
 
 .hidden {
-    color: #ffffff00;
+    /* color: #ffffff00; */
     font-size: 0px;
     /* transition: all .5s */
-    
+    margin-left: 2000px;
     /* display: none; */
 }
 
