@@ -98,7 +98,7 @@ footer {
 #front-page {
     /* position: relative; */
     /* transition-duration: .5s; */
-    border: 1px solid;
+    /* border: 1px solid; */
     border-color: #00000044;
     border-radius: 10px;
     box-shadow: none;
@@ -121,6 +121,27 @@ footer {
     
     
 }
+#front-page.off-screen {
+
+    transition-duration: .5s;
+    position: absolute;
+    /* background-color: #ffffff33; */
+    
+    
+    top: 60vh;
+    left: -400px;
+    width: 50vw;
+    height: 500px;
+
+    transform: 
+                translate(5%, -50vh) 
+                perspective(300px) 
+                rotateY(90deg) 
+                ;
+    
+    
+}
+
 
 #front-page img {
     width: 95%;
@@ -158,9 +179,7 @@ footer {
     
 }
 
-#container {
-    
-}
+
  .clickable {
     /* background-color: #ffffff33; */
     /* color: #000000; */
@@ -185,7 +204,7 @@ footer {
     /* display: none; */
 }
 
-.off-screen {
+#container.off-screen {
     margin-bottom: 1000px;
     margin-top: 1000px;
     /* transition: all .5s */

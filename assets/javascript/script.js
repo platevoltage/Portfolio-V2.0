@@ -43,6 +43,7 @@ backButtonEl.addEventListener('click', returnToHomePage);
 containerEl.addEventListener('click', function(e) {
     if (e.target.classList.contains("clickable")) {
         // console.log(e.target.id);
+        frontPageEl.classList.add("off-screen")
         scrollToTop(e.target.id);
         paragraph1El.textContent = content[e.target.id].paragraph1;
         paragraph2El.textContent = content[e.target.id].paragraph2;
@@ -86,7 +87,7 @@ function reveal(i) {
 }
 
 function adjustPerspective() {
-    var middleOfWindow = window.innerHeight/4 + window.scrollY;
+    var middleOfWindow = window.innerHeight/5 + window.scrollY;
     containerEl.style.transformOriginY = middleOfWindow + "px";
     frontPageEl.style.transformOriginY = middleOfWindow + "px";
     // console.log(middleOfWindow);
@@ -166,6 +167,7 @@ function moveProjectToHeader(id) {
 
 function returnToHomePage () {
    
+
     containerEl.style.width = null;  
     paragraph1El.style.color = null;
     paragraph2El.style.color = null;
@@ -198,7 +200,8 @@ function returnToHomePage () {
         for (i in content) {
                 reveal(i);
             }
-     
+        frontPageEl.classList.remove("off-screen");
+        frontPageEl.style.transitionDuration = "1s";
          
     },500);
     setTimeout(function() {
@@ -206,6 +209,8 @@ function returnToHomePage () {
         infoEl.style.display = null;   
         paragraph1El.style.transitionDuration = null;
         paragraph2El.style.transitionDuration = null;
+        frontPageEl.style.transitionDuration = null;
+       
     },1500);
 }
 
