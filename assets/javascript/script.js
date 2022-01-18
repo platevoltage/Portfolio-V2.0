@@ -23,6 +23,7 @@ const content = [
 
 
 const containerEl = document.getElementById("container");
+const frontPageEl = document.getElementById("front-page");
 const infoEl = document.getElementById("info");
 const backButtonEl = document.getElementById("back-button");
 const paragraph1El = document.getElementById("paragraph-1");
@@ -87,6 +88,7 @@ function reveal(i) {
 function adjustPerspective() {
     var middleOfWindow = window.innerHeight/4 + window.scrollY;
     containerEl.style.transformOriginY = middleOfWindow + "px";
+    frontPageEl.style.transformOriginY = middleOfWindow + "px";
     // console.log(middleOfWindow);
 }
 
