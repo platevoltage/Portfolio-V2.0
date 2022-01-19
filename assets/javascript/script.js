@@ -125,7 +125,8 @@ function fadeNotClicked(id) {
    
     for (i of containerEl.children) {
         if (i.id == id) {
-            i.removeAttribute("class");
+            i.classList.remove("clickable");
+            i.classList.remove("hidden");
             i.classList.add('on-display');
             // containerEl.prepend(i);
         }
@@ -185,7 +186,7 @@ function moveProjectToHeader(id) {
 function returnToHomePage () {
    
     containerEl.classList.add("home");
-    
+    containerEl.style.right = "-50%";
     containerEl.style.width = null;  
     paragraph1El.style.color = null;
     paragraph2El.style.color = null;
