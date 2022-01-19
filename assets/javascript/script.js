@@ -47,6 +47,7 @@ window.onscroll = adjustPerspective;
 window.onresize = adjustPerspective;
 
 backButtonEl.addEventListener('click', returnToHomePage);
+// window.onpopstate = returnToHomePage;
 
 containerEl.addEventListener('click', function(e) {
     if (e.target.classList.contains("clickable")) {
@@ -55,7 +56,13 @@ containerEl.addEventListener('click', function(e) {
         scrollToTop(e.target.id);
         paragraph1El.textContent = content[e.target.id].paragraph1;
         paragraph2El.textContent = content[e.target.id].paragraph2;
+        
+        setTimeout(function() {
+            window.location.href = '#';
+        },1000);
+        
     }
+    
     
 });
 
@@ -148,6 +155,7 @@ function fadeNotClicked(id) {
 }
 
 function moveProjectToHeader(id) {
+    
     containerEl.classList.remove('home');
     containerEl.style.left = null;
     containerEl.style.transform = "translate(0%, 0vh) perspective(0px) rotateY(0deg)";
@@ -184,6 +192,7 @@ function moveProjectToHeader(id) {
 }
 
 function returnToHomePage () {
+    
    
     containerEl.classList.add("home");
     containerEl.style.right = "-50%";

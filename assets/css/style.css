@@ -67,7 +67,7 @@ footer {
     border-radius: 10px;
     box-shadow: none;
  
-    /* background-color: #ffffffaa; */
+    /* background-color: #ffffffee; */
     
     
     bottom: 20px;
@@ -85,7 +85,7 @@ footer {
     
 }
 section {
-    background-color: #ffffff33;
+    /* background-color: #ffffff33; */
 }
 /* #right {
     position: absolute;
@@ -101,6 +101,7 @@ section {
     font-size: 20px;
     font-weight: 100;
     margin-top: 20px;
+    
     width: 40%;
     
 }
@@ -131,7 +132,8 @@ section {
     top: 50vh;
     left: 10px;
     width: 50vw;
-    height: 500px;
+    /* height: 500px; */
+    height: calc(90vh);
 
     transform: 
                 translate(5%, -44vh) 
@@ -190,11 +192,12 @@ section {
     font-weight: 600; 
     
     transition-duration: 0s;
+    transition-property: all;
     /* width: 530px; */
-    
-    width: 42vw;
+
+    width: 44vw;
     padding-left: 60px;
-    padding-right: 20px;
+    /* padding-right: 20px; */
     /* background-color: #ffffff20; */
     position: absolute;
     top: 70vh;  
@@ -211,6 +214,7 @@ section {
 }
 
 .on-display {
+    margin-top: 30px;
     font-size: 60px;
 }
 
@@ -222,19 +226,22 @@ section {
     text-align: right;
     font-weight: 600;
     font-size: 4.5vw;
-    
+  
 
     
     /* width: 500px;    */
     
-    /* padding-left: 20px; */
+    padding-right: 10px;
     
     margin-bottom: 0px;
-    transition-duration: .5s;
-    transition-property: margin-bottom, color, transform ;
-    transition-timing-function: ease-in-out;
-    /* transition: all 10s; */
+    /* transition-property: all; */
+    /* transition-duration: .5s; */
     
+    transition: all .5s, font-size 0s;
+    
+    /* transition-timing-function: ease-in-out; */
+    /* transition: all 10s; */
+
 }
 
 
@@ -268,5 +275,17 @@ section {
         perspective(1px) 
         rotateY(.02deg)     
     ;    
+}
+
+
+#effect-layer {
+    position: absolute;
+    top: 0;
+    background-color: #ffffff00;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+    font-size: 900px;
+    color: #ffffff08;
 }
 
