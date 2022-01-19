@@ -38,6 +38,7 @@ main {
 }
 #info {
     /* position: relative; */
+    transition-property: background-color, border-color, box-shadow;
     transition-duration: .5s;
     border: 1px solid;
     border-color: #00000000;
@@ -216,15 +217,19 @@ section {
     text-align: right;
     font-weight: 600;
     font-size: 4.5vw;
-  
+    
+
     
     /* width: 500px;    */
     
     padding-left: 20px;
     
     margin-bottom: 0px;
-    transition: all .5s ease-out;
+    transition-duration: .5s;
+    transition-property: margin-bottom, color, transform ;
+    transition-timing-function: ease-in-out;
     /* transition: all 10s; */
+    
 }
 
 
@@ -259,3 +264,4 @@ section {
         rotateY(.02deg)     
     ;    
 }
+
