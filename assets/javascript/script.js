@@ -10,19 +10,19 @@ const content = [
         paragraph2: "Aenean nec ante quis urna sollicitudin volutpat. Integer id ligula risus. Sed suscipit consequat nibh. Nunc tortor sapien, pharetra et lobortis at, viverra non mauris. Donec eu tristique nunc. Sed vel ligula a justo condimentum varius. Suspendisse ac cursus diam. Pellentesque laoreet mauris eu sapien tincidunt, quis suscipit urna dictum. Morbi efficitur justo id mauris vestibulum, eu rhoncus tortor aliquam. Maecenas eros augue, placerat eget mauris nec, mattis commodo sem. Phasellus nec lorem vel felis placerat feugiat quis id lectus. Sed consequat orci urna, ut malesuada mauris maximus vitae. Nulla sit amet suscipit justo. Curabitur commodo arcu non mollis tincidunt. Nam arcu eros, volutpat non odio sit amet, sagittis elementum massa. Vestibulum finibus arcu vitae metus pellentesque luctus."
     },{
         title: "BENDER'S QUIZ",
-        bgColor: "#000000",
+        bgColor: "#550022",
     },{
         title: "PORTFOLIOv1",
-        bgColor: "#000000",
+        bgColor: "#2222aa",
     },{
         title: "TETRIS",
-        bgColor: "#000000",
+        bgColor: "#aaaa44",
     },{
         title: "SOUND LANE",
-        bgColor: "#000000",
+        bgColor: "#555555",
     },{
         title: "SECURIFIER",
-        bgColor: "#000000",
+        bgColor: "#020277",
     }
 
 ];
@@ -44,6 +44,7 @@ populateProjects();
 
 //sets perspective point to middle of viewable window
 window.onscroll = adjustPerspective;
+window.onresize = adjustPerspective;
 
 backButtonEl.addEventListener('click', returnToHomePage);
 
@@ -94,9 +95,15 @@ function reveal(i) {
 }
 
 function adjustPerspective() {
-    var middleOfWindow = window.innerHeight/5 + window.scrollY*1.5;
-    containerEl.style.transformOriginY = middleOfWindow + "px";
-    frontPageEl.style.transformOriginY = middleOfWindow + "px";
+    var middleOfWindowY = window.innerHeight/5 + window.scrollY*1.5;
+    
+    containerEl.style.transformOriginY = middleOfWindowY + "px";
+    // console.log(containerEl.offsetWidth);
+    if (containerEl.classList.contains("home")) {
+        containerEl.style.left = containerEl.offsetWidth*.91 + "px";
+    } 
+    
+    frontPageEl.style.transformOriginY = middleOfWindowY + "px";
     // console.log(middleOfWindow);
 }
 
@@ -140,6 +147,8 @@ function fadeNotClicked(id) {
 }
 
 function moveProjectToHeader(id) {
+    containerEl.classList.remove('home');
+    containerEl.style.left = null;
     containerEl.style.transform = "translate(0%, 0vh) perspective(0px) rotateY(0deg)";
     containerEl.style.top = "0";
     containerEl.style.width = "100%";
@@ -175,7 +184,8 @@ function moveProjectToHeader(id) {
 
 function returnToHomePage () {
    
-
+    containerEl.classList.add("home");
+    
     containerEl.style.width = null;  
     paragraph1El.style.color = null;
     paragraph2El.style.color = null;
@@ -212,6 +222,7 @@ function returnToHomePage () {
         frontPageEl.classList.remove("off-screen");
         frontPageEl.style.transitionDuration = "1s";
         bodyEl.style.backgroundColor = null;
+        adjustPerspective();
          
     },500);
     setTimeout(function() {

@@ -82,6 +82,16 @@ footer {
     
     
 }
+section {
+    /* background-color: #ffffff33; */
+}
+/* #right {
+    position: absolute;
+    background-color: #ffffff33;
+    height: 100%;
+    width: 50%;
+    right: 0;
+} */
 
 #links div {
     /* border: 1px solid; */
@@ -135,7 +145,7 @@ footer {
     
     
     top: 60vh;
-    left: -400px;
+    left: -100vw;
     width: 50vw;
     height: 500px;
 
@@ -152,6 +162,8 @@ footer {
 #front-page img {
     width: 95%;
     margin: 10px;
+    border: 1px solid #00000055;
+    box-shadow: 5px 5px 5px #00000033;
 }
 #info p, #front-page p {
     
@@ -174,19 +186,21 @@ footer {
     overflow-x: hidden;
     transition-duration: 0s;
     /* width: 530px; */
-    width: 46vw;
+ 
+    width: 45vw;
+
     /* background-color: #ffffff20; */
     position: absolute;
     top: 70vh;  
-    right: 0px; 
-   
+    right: 0; 
+    white-space: nowrap;
     /* height: 1000px; */
-    transform: 
-                translate(-20%, -50vh) 
+    transform:  scale(1.0)
+                translate(  50px  , -50vh) 
                 perspective(300px) 
                 rotateY(-20deg) 
                 ;
-                
+
     
 }
 
@@ -195,7 +209,7 @@ footer {
 }
 
 
- .clickable {
+.clickable {
     
     /* background-color: #ffffff33; */
     /* color: #000000; */
