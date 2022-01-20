@@ -67,6 +67,7 @@ main {
 }
 #info div {
     /* border: 1px solid black; */
+    /* margin-top: 80px; */
     transition-duration: inherit;
 }
 #info p, #front-page p {
@@ -99,7 +100,7 @@ main {
     
 }
 footer {
-    transition: all .2s;
+    transition: all .08s linear;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -152,11 +153,16 @@ section {
 #links div p {
     margin: 0px;   
 }
-#links a {
-    color: #ffffff99;
-    text-decoration: none;
+#info a {
+    margin-left: 20px;
 }
-#links a:hover {
+a {
+    /* transition: inherit; */
+    color: inherit;
+    text-decoration: none;
+    
+}
+ a:hover {
     color: #ffffffff;
 }
 #links {
@@ -224,7 +230,7 @@ section {
     box-shadow: 5px 5px 5px #00000033;
 }
 
-#paragraph-1, #paragraph-2, #project-icon {
+#paragraph-1, #paragraph-2, #project-icon  {
     transition-duration: inherit;
     color: #ffffff00;
 }

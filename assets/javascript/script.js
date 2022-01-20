@@ -9,9 +9,9 @@ const content = [
 
         icon: "<i class='bi bi-cloud-sun'></i>",
 
-        paragraph1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante semper, tempor velit eget, lacinia sem. Cras viverra tellus dolor, nec porta lectus rhoncus suscipit. Phasellus volutpat sodales quam vitae sollicitudin. In id interdum arcu. Fusce eu arcu orci. Duis sagittis orci in nulla dictum, id tincidunt eros eleifend. Donec bibendum mattis enim. Mauris pharetra pulvinar dapibus. Nam in ante a mauris congue tristique non vel odio.",
+        paragraph1: "A simple, yet easy on the eye weather app. With the help of the Open Weather Map API it displays current weather conditions as well as the five day weather forcast. Moment.js is incorperated for time and date functions. Local Storage is used to store recent searches and to refresh your last search each time the app is launched. Lastly, this app utilizes Bootstrap Icons for weather condition graphics.",
 
-        paragraph2: "Aenean nec ante quis urna sollicitudin volutpat. Integer id ligula risus. Sed suscipit consequat nibh. Nunc tortor sapien, pharetra et lobortis at, viverra non mauris. Donec eu tristique nunc. Sed vel ligula a justo condimentum varius. Suspendisse ac cursus diam. Pellentesque laoreet mauris eu sapien tincidunt, quis suscipit urna dictum. Morbi efficitur justo id mauris vestibulum, eu rhoncus tortor aliquam. Maecenas eros augue, placerat eget mauris nec, mattis commodo sem. Phasellus nec lorem vel felis placerat feugiat quis id lectus. Sed consequat orci urna, ut malesuada mauris maximus vitae. Nulla sit amet suscipit justo. Curabitur commodo arcu non mollis tincidunt. Nam arcu eros, volutpat non odio sit amet, sagittis elementum massa. Vestibulum finibus arcu vitae metus pellentesque luctus."
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/weather-widget/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/weather-widget/</a> "
     },{
         title: "BENDER'S QUIZ",
         bgColor: "#550022",
@@ -72,8 +72,8 @@ containerEl.addEventListener('click', function(e) {
         frontPageEl.classList.add("off-screen")
         scrollToTop(e.target.id);
         projectIconEl.innerHTML = content[e.target.id].icon;
-        paragraph1El.textContent = content[e.target.id].paragraph1;
-        paragraph2El.textContent = content[e.target.id].paragraph2;
+        paragraph1El.innerHTML = content[e.target.id].paragraph1;
+        paragraph2El.innerHTML = content[e.target.id].paragraph2;
 
         
         setTimeout(function() {
