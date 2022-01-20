@@ -15,8 +15,8 @@ const content = [
     },{
         title: "BENDER'S QUIZ",
         bgColor: "#550022",
-        icon: "<i class='bi bi-apple'></i>",
-        effectIcon: "<i class='bi bi-apple'></i>",
+        icon: "<img src='./assets/images/bender.svg' style='width: 100%; '>",
+        effectIcon: "<img src='./assets/images/benderEffect.svg' style='width: 100%; '>",
     },{
         title: "PORTFOLIOv1",
         bgColor: "#2222aa",
@@ -196,6 +196,8 @@ function moveProjectToHeader(id) {
         console.log(content[id].bgColor);
         infoEl.style.borderColor = "#00000033";
         projectIconEl.style.color = "#ffffff99";
+        projectIconEl.firstChild.style.opacity = '1';
+        
 
     },500);
     setTimeout(function() {
@@ -207,6 +209,7 @@ function moveProjectToHeader(id) {
     setTimeout(function() {
         paragraph2El.style.color = "#ffffff99";
         animateEffectLayer();
+        
     },1500);
 
 
@@ -219,6 +222,7 @@ function returnToHomePage () {
     containerEl.style.right = "-50%";
     containerEl.style.width = null;  
     projectIconEl.style.color = null;
+    
     paragraph1El.style.color = null;
     paragraph2El.style.color = null;
     projectIconEl.style.transitionDuration = ".5s";
@@ -266,10 +270,13 @@ function returnToHomePage () {
         paragraph1El.style.transitionDuration = null;
         paragraph2El.style.transitionDuration = null;
         frontPageEl.style.transitionDuration = null;
+        projectIconEl.firstChild.style.opacity = '0';
         
         
-       
     },1500);
+    // setTimeout(function() {
+        
+    // },3000)
 }
 
 
@@ -283,7 +290,7 @@ function createEffectLayer(id) {
         // effectEl[i].style.color = "#666666";
         effectEl[i].style.transitionDuration = ".1s";
         
-        effectEl[i].style.transform = `translate(${(Math.random()*100)}vw, ${(Math.random()*100)}vh)`;
+        effectEl[i].style.transform = `translate(${(Math.random()*100)}vw, ${(Math.random()*100)}vh) rotateZ(${Math.random()*100}deg)`;
         
     }
     

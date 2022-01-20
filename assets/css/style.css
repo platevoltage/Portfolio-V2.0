@@ -74,7 +74,7 @@ main {
     width: 80%;
 }
 #project-icon {
-    transition-property: color;
+    transition-property: color, opacity;
     transition-duration: inherit;
     display: flex;
     justify-content: center;
@@ -83,6 +83,15 @@ main {
 
     min-width: 150px;
     width: 20%;
+}
+#project-icon img {
+    /* height: 100px; */
+    transition: inherit;
+    height: calc(4vw + 220px);
+     /* background-color: #ffffff99; */
+     /* fill: #ff0000; */
+     /* opacity: 1; */
+    
 }
 footer {
     position: fixed;
@@ -313,6 +322,7 @@ section {
     /* width: 100%; */
     z-index: -10;
     font-size: 200px;
+    width: 200px;
     color: #ffffff0d;
 }
 
