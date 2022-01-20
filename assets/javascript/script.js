@@ -5,24 +5,38 @@ const content = [
 
         bgColor: "#008f40",
 
+        effectIcon: "<i class='bi bi-cloud-sun'></i>",
+
+        icon: "<i class='bi bi-cloud-sun'></i>",
+
         paragraph1: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante semper, tempor velit eget, lacinia sem. Cras viverra tellus dolor, nec porta lectus rhoncus suscipit. Phasellus volutpat sodales quam vitae sollicitudin. In id interdum arcu. Fusce eu arcu orci. Duis sagittis orci in nulla dictum, id tincidunt eros eleifend. Donec bibendum mattis enim. Mauris pharetra pulvinar dapibus. Nam in ante a mauris congue tristique non vel odio.",
 
         paragraph2: "Aenean nec ante quis urna sollicitudin volutpat. Integer id ligula risus. Sed suscipit consequat nibh. Nunc tortor sapien, pharetra et lobortis at, viverra non mauris. Donec eu tristique nunc. Sed vel ligula a justo condimentum varius. Suspendisse ac cursus diam. Pellentesque laoreet mauris eu sapien tincidunt, quis suscipit urna dictum. Morbi efficitur justo id mauris vestibulum, eu rhoncus tortor aliquam. Maecenas eros augue, placerat eget mauris nec, mattis commodo sem. Phasellus nec lorem vel felis placerat feugiat quis id lectus. Sed consequat orci urna, ut malesuada mauris maximus vitae. Nulla sit amet suscipit justo. Curabitur commodo arcu non mollis tincidunt. Nam arcu eros, volutpat non odio sit amet, sagittis elementum massa. Vestibulum finibus arcu vitae metus pellentesque luctus."
     },{
         title: "BENDER'S QUIZ",
         bgColor: "#550022",
+        icon: "<i class='bi bi-apple'></i>",
+        effectIcon: "<i class='bi bi-apple'></i>",
     },{
         title: "PORTFOLIOv1",
         bgColor: "#2222aa",
+        icon: "<i class='bi bi-cloud-sun'></i>",
+        effectIcon: "<i class='bi bi-cloud-sun'></i>",
     },{
         title: "TETRIS",
         bgColor: "#aaaa44",
+        icon: "<i class='bi bi-cloud-sun'></i>",
+        effectIcon: "<i class='bi bi-cloud-sun'></i>",
     },{
         title: "SOUND LANE",
         bgColor: "#555555",
+        icon: "<i class='bi bi-cloud-sun'></i>",
+        effectIcon: "<i class='bi bi-cloud-sun'></i>",
     },{
         title: "SECURIFIER",
         bgColor: "#020277",
+        icon: "<i class='bi bi-cloud-sun'></i>",
+        effectIcon: "<i class='bi bi-cloud-sun'></i>",
     }
 
 ];
@@ -35,6 +49,8 @@ const infoEl = document.getElementById("info");
 const backButtonEl = document.getElementById("back-button");
 const paragraph1El = document.getElementById("paragraph-1");
 const paragraph2El = document.getElementById("paragraph-2");
+const projectIconEl = document.getElementById("project-icon");
+const effectEl = document.getElementsByClassName("effect-layer");
 
 
 //initial setup
@@ -54,8 +70,10 @@ containerEl.addEventListener('click', function(e) {
         // console.log(e.target.id);
         frontPageEl.classList.add("off-screen")
         scrollToTop(e.target.id);
+        projectIconEl.innerHTML = content[e.target.id].icon;
         paragraph1El.textContent = content[e.target.id].paragraph1;
         paragraph2El.textContent = content[e.target.id].paragraph2;
+
         
         setTimeout(function() {
             window.location.href = '#';
@@ -65,6 +83,8 @@ containerEl.addEventListener('click', function(e) {
     
     
 });
+
+setInterval(animateEffectLayer, 20000);
 
 
 
@@ -162,7 +182,7 @@ function moveProjectToHeader(id) {
     containerEl.style.top = "0";
     containerEl.style.width = "100%";
     containerEl.style.transitionDuration = ".5s";
-    infoEl.style.display = "block"; 
+    infoEl.style.display = "flex"; 
     infoEl.style.transitionDuration = "2s";
     bodyEl.style.backgroundColor = content[id].bgColor;
     setTimeout(function() {
@@ -175,17 +195,18 @@ function moveProjectToHeader(id) {
         infoEl.style.backgroundColor = "#ffffff22";
         console.log(content[id].bgColor);
         infoEl.style.borderColor = "#00000033";
-        
+        projectIconEl.style.color = "#ffffff99";
 
     },500);
     setTimeout(function() {
         infoEl.style.boxShadow = "5px 5px 5px #00000033";
         paragraph1El.style.color = "#ffffff99";
         backButtonEl.style.display = "block";
+        createEffectLayer(id);
     },1300);
     setTimeout(function() {
         paragraph2El.style.color = "#ffffff99";
-        
+        animateEffectLayer();
     },1500);
 
 
@@ -193,12 +214,14 @@ function moveProjectToHeader(id) {
 
 function returnToHomePage () {
     
-   
+    
     containerEl.classList.add("home");
     containerEl.style.right = "-50%";
     containerEl.style.width = null;  
+    projectIconEl.style.color = null;
     paragraph1El.style.color = null;
     paragraph2El.style.color = null;
+    projectIconEl.style.transitionDuration = ".5s";
     paragraph1El.style.transitionDuration = ".5s";
     paragraph2El.style.transitionDuration = ".5s";
     
@@ -208,6 +231,7 @@ function returnToHomePage () {
         infoEl.style.boxShadow = null; 
         infoEl.style.borderColor = null;
         infoEl.style.transitionDuration = null;
+        destroyEffectLayer();
         
     },200)
     setTimeout(function() {
@@ -238,12 +262,58 @@ function returnToHomePage () {
     setTimeout(function() {
         containerEl.style.transitionDuration = "0s";
         infoEl.style.display = null;   
+        projectIconEl.style.transitionDuration = null;
         paragraph1El.style.transitionDuration = null;
         paragraph2El.style.transitionDuration = null;
         frontPageEl.style.transitionDuration = null;
+        
         
        
     },1500);
 }
 
 
+
+
+function createEffectLayer(id) {
+    for (let i = 0; i < effectEl.length; i++) {
+        effectEl[i].innerHTML = content[id].effectIcon;
+        // effectEl[i].style.left = "0wv";
+        // effectEl[i].style.top = "0wh";
+        // effectEl[i].style.color = "#666666";
+        effectEl[i].style.transitionDuration = ".1s";
+        
+        effectEl[i].style.transform = `translate(${(Math.random()*100)}vw, ${(Math.random()*100)}vh)`;
+        
+    }
+    
+
+
+}
+
+function destroyEffectLayer() {
+    for (let i = 0; i < effectEl.length; i++) {
+        effectEl[i].innerHTML = "";
+
+        
+    }
+    
+
+
+}
+
+
+
+
+
+function animateEffectLayer() {
+    
+    
+    for (let i = 0; i < effectEl.length; i++) {
+        effectEl[i].style.transitionDuration = null;
+        effectEl[i].style.transform = 
+            `scale(${Math.random()}) 
+            translate(${Math.random()*100}vw, ${Math.random()*70}vh) 
+            rotateZ(${Math.random()*100}deg)`;
+    }
+}
