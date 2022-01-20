@@ -20,8 +20,8 @@ const content = [
     },{
         title: "PORTFOLIOv1",
         bgColor: "#2222aa",
-        icon: "<i class='bi bi-cloud-sun'></i>",
-        effectIcon: "<i class='bi bi-cloud-sun'></i>",
+        icon: "<i class='bi bi-aspect-ratio'></i>",
+        effectIcon: "<i class='bi bi-aspect-ratio'></i>",
     },{
         title: "TETRIS",
         bgColor: "#aaaa44",
@@ -30,13 +30,13 @@ const content = [
     },{
         title: "SOUND LANE",
         bgColor: "#555555",
-        icon: "<i class='bi bi-cloud-sun'></i>",
-        effectIcon: "<i class='bi bi-cloud-sun'></i>",
+        icon: "<i class='bi bi-music-player'></i>",
+        effectIcon: "<i class='bi bi-music-player'></i>",
     },{
         title: "SECURIFIER",
         bgColor: "#020277",
-        icon: "<i class='bi bi-cloud-sun'></i>",
-        effectIcon: "<i class='bi bi-cloud-sun'></i>",
+        icon: "<i class='bi bi-key'></i>",
+        effectIcon: "<i class='bi bi-key'></i>",
     }
 
 ];

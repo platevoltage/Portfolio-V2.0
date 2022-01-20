@@ -26,15 +26,19 @@ main {
 #back-button {
     border: 1px solid;
     border-radius: 5px;
-    width: 50px;
-    height: 30px;
+    width: 60px;
+    height: 40px;
     color: #ffffff88;
     position: absolute;
     bottom: 5px;
     right: 5px;
-    background-color: #ffffff33;
+    background-color: #ffffff00;
     border: none;
     display: none;
+    font-size: 30px;
+}
+#back-button:active {
+    color: #ffffffff;
 }
 #info {
     /* position: relative; */
@@ -48,12 +52,13 @@ main {
     
     position: absolute;
     background-color: #ffffff00;
-    
+    padding-top: 10px;
+    padding-bottom: 40px;
     
     top: 100px;
-    left: 10px;
+    left: 20px;
     width: 70vw;
-    height: calc(100vh - 300px);
+    height: calc(100vh - 350px);
     /* backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     -moz-backdrop-filter: blur(4px); */
@@ -79,7 +84,7 @@ main {
     display: flex;
     justify-content: center;
     /* background-color: #ffffff99; */
-    font-size: calc(4vw + 120px);
+    font-size: calc(4vw + 100px);
 
     min-width: 150px;
     width: 20%;
