@@ -97,6 +97,7 @@ main {
     /* height: 100px; */
     transition: inherit;
     height: calc(4vw + 220px);
+    width: auto;
      /* background-color: #ffffff99; */
      /* fill: #ff0000; */
      opacity: 0;

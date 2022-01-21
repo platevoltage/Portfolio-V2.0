@@ -31,7 +31,7 @@ const content = [
     },{
         title: "TETRIS",
         bgColor: "#550022",
-        icon: "<img src='./assets/images/tetris.svg' style='width: 100%; '>",
+        icon: "<img src='./assets/images/tetris.svg' style='transform: rotate(90deg);'>",
         effectIcon: "<img src='./assets/images/tetrisEffect.svg' style='width: 100%; '>",
         paragraph1: "This relatively simple Javascript based Tetris app was the product my love for games and my impatience. I build this between the time I signed up for my Bootcamp and the time that classes started. It uses a single canvas element and uses a grid of objects that are manipulated to create the game play.",
         paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/tetris/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/tetris/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/tetris/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/tetris/</a><br><br><br><br><img src = './assets/images/tetris.png' style='height: 300px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
@@ -67,7 +67,7 @@ const effectEl = document.getElementsByClassName("effect-layer");
 
 
 //initial setup
-scrollToTop();
+
 adjustPerspective();
 populateProjects();
 
@@ -126,7 +126,7 @@ function populateProjects() {
     for (i in content) {
         reveal(i);
     }
-
+    scrollToTop();
 }
 
 function reveal(i) {
