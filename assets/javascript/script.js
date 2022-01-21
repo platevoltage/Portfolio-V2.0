@@ -18,36 +18,36 @@ const content = [
         bgColor: "#444444",
         icon: "<img src='./assets/images/bender.svg' style='width: 100%; '>",
         effectIcon: "<img src='./assets/images/benderEffect.svg' style='width: 100%; '>",
-        paragraph1: "",
-        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/benders-javascript-quiz/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/benders-javascript-quiz/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/benders-javascript-quiz/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/benders-javascript-quiz/</a><br><br><br><br><img src = './assets/images/bender-quiz.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>",
+        paragraph1: "An expandable and customizable quiz app with a fun theme courtesey of everyone's favorite lazy robot, Bender. It features animations and a leaderboard that makes use of Local Storage to keep scores between games. Questions and answers are kept in an Object making it easy to change the content to your needs, but by default asks questions on Javascript basics",
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/benders-javascript-quiz/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/benders-javascript-quiz/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/benders-javascript-quiz/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/benders-javascript-quiz/</a><br><br><br><br><img src = './assets/images/bender-quiz.png' style='height: 300px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>",
 
     },{
         title: "PORTFOLIOv1",
         bgColor: "#131385",
         icon: "<i class='bi bi-aspect-ratio'></i>",
         effectIcon: "<i class='bi bi-aspect-ratio'></i>",
-        paragraph1: "",
+        paragraph1: "Here it is. My first crack at a portfolio. All dynamic elements are implemented using only CSS and is fully mobile responsive ",
         paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/portfolio/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/portfolio/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/portfolio/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/portfolio/</a><br><br><br><br><img src = './assets/images/portfoliov1.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "TETRIS",
         bgColor: "#550022",
         icon: "<i class='bi bi-cloud-sun'></i>",
         effectIcon: "<i class='bi bi-cloud-sun'></i>",
-        paragraph1: "",
-        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/tetris/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/tetris/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/tetris/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/tetris/</a><br><br><br><br><img src = './assets/images/tetris.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
+        paragraph1: "This relatively simple Javascript based Tetris app was the product my love for games and my impatience. I build this between the time I signed up for my Bootcamp and the time that classes started. It uses a single canvas element and uses a grid of objects that are manipulated to create the game play.",
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/tetris/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/tetris/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/tetris/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/tetris/</a><br><br><br><br><img src = './assets/images/tetris.png' style='height: 300px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "SOUND LANE",
         bgColor: "#000e25",
         icon: "<i class='bi bi-music-player'></i>",
         effectIcon: "<i class='bi bi-music-player'></i>",
-        paragraph1: "",
+        paragraph1: "This project was a collaberation between myself and two other people. Sound Lane uses API calls from AudioDB and Last.fm to populate a page with information and images for your favorite musical artists.",
         paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/Sound-Lane/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/Sound-Lane/</a><br><br><br><br><img src = './assets/images/sound-lane.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "SECURIFIER",
         bgColor: "#008f40",
         icon: "<i class='bi bi-key'></i>",
         effectIcon: "<i class='bi bi-key'></i>",
-        paragraph1: "",
+        paragraph1: "A very basic password generator that gives you a choice of length, and what type of characters to use. It makes heavy use of Math.random() to generate ASCII codes",
         paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/securifier/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/securifier/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/securifier/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/securifier/</a><br><br><br><br><img src = './assets/images/securifier.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     }
 
@@ -226,6 +226,7 @@ function moveProjectToHeader(id) {
     },1300);
     setTimeout(function() {
         paragraph2El.style.color = "#ffffff99";
+        paragraph2El.getElementsByTagName('img')[0].style.opacity = '1';
         animateEffectLayer();
         
     },1500);
@@ -240,7 +241,7 @@ function returnToHomePage () {
     containerEl.style.right = "-50%";
     containerEl.style.width = null;  
     projectIconEl.style.color = null;
-    
+    paragraph2El.getElementsByTagName('img')[0].style.opacity = null;
     paragraph1El.style.color = null;
     paragraph2El.style.color = null;
     projectIconEl.style.transitionDuration = ".5s";
@@ -263,6 +264,7 @@ function returnToHomePage () {
         containerEl.style.position = null;
         containerEl.style.height = null;
         backButtonEl.style.display = null;  
+       
         
         
         for (i of containerEl.children) {
@@ -287,6 +289,7 @@ function returnToHomePage () {
         projectIconEl.style.transitionDuration = null;
         paragraph1El.style.transitionDuration = null;
         paragraph2El.style.transitionDuration = null;
+        
         frontPageEl.style.transitionDuration = null;
         projectIconEl.firstChild.style.opacity = '0';
         
