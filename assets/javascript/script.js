@@ -67,6 +67,7 @@ const effectEl = document.getElementsByClassName("effect-layer");
 
 
 //initial setup
+scrollToTop();
 adjustPerspective();
 populateProjects();
 
@@ -151,8 +152,11 @@ function scrollToTop(id) {
         
         if (window.scrollY == 0) {
             clearInterval(interval);
-            moveProjectToHeader(id);
-            fadeNotClicked(id);
+            if (id) {
+                moveProjectToHeader(id);
+                fadeNotClicked(id);
+            }
+            
 
         }
     },1);
