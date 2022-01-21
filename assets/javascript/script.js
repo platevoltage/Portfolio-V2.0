@@ -136,8 +136,9 @@ function reveal(i) {
 
 function adjustPerspective() {
     var middleOfWindowY = window.innerHeight/5 + window.scrollY*1.5;
-    containerEl.style.transformOriginY = middleOfWindowY + "px";
-    frontPageEl.style.transformOriginY = middleOfWindowY + "px";
+    console.log(middleOfWindowY);
+    containerEl.style.transformOrigin = "50% " + middleOfWindowY + "px";
+    frontPageEl.style.transformOrigin = "50% " + middleOfWindowY + "px";
     if (containerEl.classList.contains("home")) {
         containerEl.style.left = containerEl.offsetWidth*.91 + "px";
     }      
@@ -187,7 +188,7 @@ function moveProjectToHeader(id) {
     footer.style.fontSize = "30px";
     containerEl.classList.remove('home');
     containerEl.style.left = null;
-    containerEl.style.transform = "translate(0%, 0vh) perspective(0px) rotateY(0deg)";
+    containerEl.style.transform = "translate(0%, 0vh) perspective(300px) rotateY(0deg)";
     containerEl.style.top = "0";
     containerEl.style.width = "100%";
     containerEl.style.transitionDuration = ".5s";
