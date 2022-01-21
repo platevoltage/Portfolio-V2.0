@@ -41,7 +41,7 @@ const content = [
         icon: "<i class='bi bi-music-player'></i>",
         effectIcon: "<i class='bi bi-music-player'></i>",
         paragraph1: "",
-        paragraph2: "Visit the web app: <a href = 'https://github.com/samuellutz/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://github.com/samuellutz/Sound-Lane/</a><br><br>Code on GitHub: <a href='https://samuellutz.github.io/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://samuellutz.github.io/Sound-Lane/</a><br><br><br><br><img src = './assets/images/sound-lane.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/Sound-Lane/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/Sound-Lane/</a><br><br><br><br><img src = './assets/images/sound-lane.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "SECURIFIER",
         bgColor: "#008f40",
