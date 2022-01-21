@@ -3,7 +3,8 @@ const content = [
     {
         title: "WEATHER WIDGET",
 
-        bgColor: "#008f40",
+        // bgColor: "#008f40",
+        bgColor: "#4667fa",
 
         effectIcon: "<i class='bi bi-cloud-sun'></i>",
 
@@ -11,32 +12,43 @@ const content = [
 
         paragraph1: "A simple, yet easy on the eye weather app. With the help of the Open Weather Map API it displays current weather conditions as well as the five day weather forcast. Moment.js is incorperated for time and date functions. Local Storage is used to store recent searches and to refresh your last search each time the app is launched. Lastly, this app utilizes Bootstrap Icons for weather condition graphics.",
 
-        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/weather-widget/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/weather-widget/</a> "
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/weather-widget/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/weather-widget/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/weather-widget/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/weather-widget/</a><br><br><img src = './assets/images/weather-widget.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "BENDER'S QUIZ",
-        bgColor: "#550022",
+        bgColor: "#444444",
         icon: "<img src='./assets/images/bender.svg' style='width: 100%; '>",
         effectIcon: "<img src='./assets/images/benderEffect.svg' style='width: 100%; '>",
+        paragraph1: "",
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/benders-javascript-quiz/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/benders-javascript-quiz/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/benders-javascript-quiz/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/benders-javascript-quiz/</a><br><br><br><br><img src = './assets/images/bender-quiz.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>",
+
     },{
         title: "PORTFOLIOv1",
-        bgColor: "#2222aa",
+        bgColor: "#131385",
         icon: "<i class='bi bi-aspect-ratio'></i>",
         effectIcon: "<i class='bi bi-aspect-ratio'></i>",
+        paragraph1: "",
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/portfolio/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/portfolio/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/portfolio/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/portfolio/</a><br><br><br><br><img src = './assets/images/portfoliov1.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "TETRIS",
-        bgColor: "#aaaa44",
+        bgColor: "#550022",
         icon: "<i class='bi bi-cloud-sun'></i>",
         effectIcon: "<i class='bi bi-cloud-sun'></i>",
+        paragraph1: "",
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/tetris/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/tetris/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/tetris/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/tetris/</a><br><br><br><br><img src = './assets/images/tetris.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "SOUND LANE",
-        bgColor: "#555555",
+        bgColor: "#000e25",
         icon: "<i class='bi bi-music-player'></i>",
         effectIcon: "<i class='bi bi-music-player'></i>",
+        paragraph1: "",
+        paragraph2: "Visit the web app: <a href = 'https://github.com/samuellutz/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://github.com/samuellutz/Sound-Lane/</a><br><br>Code on GitHub: <a href='https://samuellutz.github.io/Sound-Lane/' target='_blank' rel='noopener noreferrer'>https://samuellutz.github.io/Sound-Lane/</a><br><br><br><br><img src = './assets/images/sound-lane.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     },{
         title: "SECURIFIER",
-        bgColor: "#020277",
+        bgColor: "#008f40",
         icon: "<i class='bi bi-key'></i>",
         effectIcon: "<i class='bi bi-key'></i>",
+        paragraph1: "",
+        paragraph2: "Visit the web app: <a href = 'https://antieatingactivist.github.io/securifier/' target='_blank' rel='noopener noreferrer'>https://antieatingactivist.github.io/securifier/</a><br><br>Code on GitHub: <a href='https://github.com/antieatingactivist/securifier/' target='_blank' rel='noopener noreferrer'>https://github.com/antieatingactivist/securifier/</a><br><br><br><br><img src = './assets/images/securifier.png' style='height: 200px; background-color: #ffffff00; padding-left: 10%; padding-right: 10%'>"
     }
 
 ];
@@ -306,10 +318,19 @@ function createEffectLayer(id) {
 
 function destroyEffectLayer() {
     for (let i = 0; i < effectEl.length; i++) {
-        effectEl[i].innerHTML = "";
-
+        // effectEl[i].innerHTML = "";
+        effectEl[i].style.transitionDuration = ".5s";
+        effectEl[i].style.transform = `translate(-100vw, -100vh) rotateX(${Math.random()*100}deg)`;
         
     }
+    setTimeout(function() {
+        for (let i = 0; i < effectEl.length; i++) {
+            effectEl[i].innerHTML = "";
+
+            
+        }
+
+    },1000);
     
 
 

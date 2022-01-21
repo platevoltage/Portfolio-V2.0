@@ -24,6 +24,7 @@ main {
     
 }
 #back-button {
+    
     border: 1px solid;
     border-radius: 5px;
     width: 60px;
@@ -37,7 +38,7 @@ main {
     display: none;
     font-size: 30px;
 }
-#back-button:active {
+#back-button:hover {
     color: #ffffffff;
 }
 #info {
@@ -144,7 +145,7 @@ section {
     border-color: #00000044;
     font-size: 20px;
     font-weight: 100;
-    margin-top: 20px;
+    /* margin-top: 0px; */
     margin-right: 400px;
     
     /* width: px; */
@@ -252,7 +253,7 @@ a {
     /* padding-right: 20px; */
     /* background-color: #ffffff20; */
     position: absolute;
-    top: 70vh;  
+    top: 80vh;  
     /* right: 0;  */
     white-space: nowrap;
     /* height: 1000px; */
@@ -321,10 +322,10 @@ a {
 
     /* margin-bottom: 100px; */
     
-    color: #ffffff77;
+    color: #555588ff;
     transform: 
-        scale(1.05)   
-        translate(3%, 0%) 
+        scale(1.06)   
+        translate(1%, 0%) 
         perspective(1px) 
         rotateY(.02deg)     
     ;    
